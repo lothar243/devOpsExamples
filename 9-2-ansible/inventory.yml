@@ -1,0 +1,2 @@
+[web]
+webserver ansible_host=10.8.157.105 ansible_user=jeff ansible_ssh_private_key_file=~/.ssh/id_ed25519

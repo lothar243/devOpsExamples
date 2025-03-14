@@ -1,0 +1,2 @@
+Be sure to put your access_key and secret_key values in the key-variables file --- which should NOT be added to source control!! ---
+Load them into memory with 'source key-variables'.

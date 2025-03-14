@@ -1,0 +1,9 @@
+- name: Deploy Simple Web Page
+  hosts: web
+  become: yes
+  tasks:
+    - name: Copy index.html to web server
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html
+        mode: '0644'
