@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-0
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/data/vol0  # This must exist on the node, with the correct permissions
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - k8s-ruby01-node
+  persistentVolumeReclaimPolicy: Retain
+
+# this will use the volume on k8s-ruby01-node mounted at /mnt/data/vol1
+
