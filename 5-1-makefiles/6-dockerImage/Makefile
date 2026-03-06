@@ -21,5 +21,5 @@ run:
 
 # Remove the image
 clean:
-	docker rmi $(FULL_IMAGE)
+	docker image rm $(FULL_IMAGE)
 
